@@ -47,7 +47,10 @@ app.use("/users", authUser)
 app.use("/posts", authPost)
 app.use("/category", authCat) 
 //   app.use("/auth/register", require("./routes/auth/register"));
-
+app.get("/", (req,res) => {
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.send("API is runningg...");
+});
 
 app.listen("5000", () => {
     console.log("backend running");
